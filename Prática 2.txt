@@ -1,13 +1,4 @@
 Prática 2:
-(1)
- a)
---> iterators/const_iterators    O(n) contudo é mais lento que as duas outras
---> for (elem : conj)            O(n) A MAIS RÁPIDA --> melhor solução
---> std::max_element             O(n) intermédia
-
-Complexidade temporal: O(1) porque não guardamos nada que dependa de n;
-
-=============
 
 (3)
  a)

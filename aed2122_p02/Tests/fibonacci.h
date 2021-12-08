@@ -1,4 +1,3 @@
-
 unsigned fibonacci_1(unsigned n) {
     if (n <= 1)
         return n;
