@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\LENOVO\OneDrive\Ambiente de Trabalho\FEUP\AED\Práticas\aed2122_p02"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/LENOVO/OneDrive/Ambiente de Trabalho/FEUP/AED/PrÃ¡ticas/aed2122_p02/cmake-build-debug
