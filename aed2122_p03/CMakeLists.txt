@@ -11,3 +11,4 @@ add_executable(aed2122_p03 main.cpp Tests/tests.cpp Tests/funSearchProblem.cpp)
 
 target_link_libraries(aed2122_p03 gtest gtest_main)
 
+# Doxygen Build
