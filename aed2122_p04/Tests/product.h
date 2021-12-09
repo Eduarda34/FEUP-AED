@@ -2,9 +2,11 @@
 #define PRODUCT_H
 
 #include <string>
+#include <system_error>
+
 using namespace std;
 
-class Product {
+class Product : public error_code {
     string id;
     float price;
     float weight;
