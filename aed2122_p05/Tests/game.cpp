@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+
 using namespace std;
 
 
@@ -28,40 +29,136 @@ Game::Game(list<Kid>& l2) {
 
 //-----------------------------------------------------------------
 
-// TODO
+//1. (a)
 void Game::addKid(const Kid k1) {
+    kids.push_back(k1); //Adiciona mais uma criança
 }
 
-// TODO
+//1. (a)
 list<Kid> Game::getKids() const {
-    return (list<Kid>());
+    return kids;  //Número de crianças em jogo
 }
 
-// TODO
+//1. (a)
 void Game::setKids(const list<Kid>& l1) {
+    this -> kids = l1;
 }
 
-// TODO
+//1. (b)
 Kid Game::loseGame(string phrase) {
-    return (Kid("",0,'x'));
+    int words = numberOfWords(phrase);
+    int index = 0;
+    while(kids.size() > 1){ //Enquanto existirem crianças em jogo
+        index = (words - 1 + index) % kids.size(); //Determina o número de palavras existentes na frase
+        list<Kid>:: iterator  it; //iterator: apontam para os endereços de memória; Reduzem a complexidade e tempo de execução
+        it = kids.begin();
+
+        for(int i=0; i < index; i++)
+            it++;
+
+        kids.remove(*it);
+    }
+    return kids.front(); //Retorna a criança que perde
 }
 
-// TODO
+//1. (d)
 list<Kid> Game::removeOlder(unsigned id) {
-    return (list<Kid>());
+    list<Kid> result = {};
+    for(auto kid : kids){
+        if(kid.getAge() > id){
+            kids.remove(kid);
+            result.push_back(kid);
+        }
+    }
+    return result;
 }
 
-// TODO
+//1. (c)
 queue<Kid> Game::rearrange() {
-    return(queue<Kid>());
+    queue<Kid> queueMenino;
+    queue<Kid> queueMenina;
+    list<Kid> final;
+    queue<Kid> result;
+
+    for(auto kid:kids){
+        if(kid.getSex() == 'm')
+            queueMenino.push(kid);
+        else
+            queueMenina.push(kid);
+    }
+
+    int n = queueMenina.size();
+    int m = queueMenino.size();
+    int boys = m/n;
+    int girls = n/m;
+
+    if(n < m){
+        while (m>0 && n>0){
+            final.push_back(queueMenina.front());
+            queueMenina.pop();
+            n--;
+            for(int i=0; i < boys; i++){
+                final.push_back(queueMenino.front());
+                queueMenino.pop();
+                m--;
+            }
+        }
+    }
+    else{
+        while(m>0 && n>0){
+            final.push_back(queueMenino.front());
+            queueMenino.pop();
+            m--;
+            for(int i=0; i < girls; i++){
+                final.push_back(queueMenina.front());
+                queueMenina.pop();
+                n--;
+            }
+        }
+    }
+
+    kids = final;
+    while(queueMenino.size() > 0){
+        result.push(queueMenino.front()); //push() -> Insere elemento na queue
+        queueMenino.pop(); //pop() -> Remove elemento da queue
+    }
+
+    while(queueMenina.size() > 0){
+        result.push(queueMenina.front());
+        queueMenina.pop();
+    }
+    return result;
 }
 
-// TODO
+//1. (e)
 bool Game::operator==(Game& g2) {
-	return true;
+    if(this->kids.size() != g2.getKids().size())
+        return false;
+
+    else{
+        for(int i=0; i < kids.size(); i++){
+            if(!(this->kids.front() == g2.getKids().front()))
+                return false;
+        }
+    }
+    return true;
 }
 
-// TODO
+//1. (f)
 list<Kid> Game::shuffle() const {
-	return (list<Kid>());
+    list<Kid> result = {}, k = kids;
+    int index;
+    while (k.size()) {
+        index = rand() % k.size(); // random index in [0..k.size()]
+        int i = 0;
+        for (auto kid : k) { //Tipo da variável é deduzido automaticamente do seu inicializador
+            if (i == index) {
+                result.push_back(kid);
+                k.remove(kid);
+                break;
+            }
+            i++;
+        }
+    }
+    return result;
 }

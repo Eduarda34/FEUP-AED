@@ -15,31 +15,40 @@ public:
 	T& findMin();
 };
 
-//TODO
+//2. Verifica se a pilha está vazia
 template <class T> 
 bool StackExt<T>::empty() const {
-	return true;
+	return values.empty();
 }
 
-//TODO
+//2. Retorna o elemento no topo da fila
 template <class T> 
 T& StackExt<T>::top() {
-    return *new T();
+    return values.top();
 }
 
-//TODO
+//2. Remove elemento
 template <class T> 
 void StackExt<T>::pop() {
+    values.pop();
 }
 
-//TODO
+//2. Insere elemento
 template <class T> 
 void StackExt<T>::push(const T& val) {
+    values.push(val);
 }
 
-//TODO
+//2. Retorna valor do menor elemento
 template <class T> 
 T& StackExt<T>::findMin() {
-    return *new T();
+    minimums.push(values.top());
+    values.pop();
+
+    while(!values.empty()){
+        if(values.top() < minimums.top())
+            minimums.push(values.top());
+    }
+    return minimums.top();
 }
 
