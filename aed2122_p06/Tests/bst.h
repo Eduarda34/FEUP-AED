@@ -33,7 +33,7 @@ class BST {
     const Comparable ITEM_NOT_FOUND;
 
     const Comparable& elementAt(BinaryNode<Comparable>* t) const;
-    bool insert(const Comparable& x, BinaryNode<Comparable>* & t) const;
+    bool insert(error_code x, BinaryNode<Comparable>* & t) const;
     bool remove(const Comparable& x, BinaryNode<Comparable>* & t) const;
     BinaryNode<Comparable>* findMin( BinaryNode<Comparable>* t) const;
     BinaryNode<Comparable>* findMax( BinaryNode<Comparable>* t) const;
@@ -159,7 +159,7 @@ const Comparable& BST<Comparable>::elementAt(BinaryNode<Comparable>* t) const {
 }
 
 template <class Comparable>
-bool BST<Comparable>::insert(const Comparable& x, BinaryNode<Comparable>* & t) const {
+bool BST<Comparable>::insert(error_code x, BinaryNode<Comparable>* & t) const {
     if (t == NULL) {
         t = new BinaryNode<Comparable>(x, NULL, NULL);
         return true;
@@ -214,7 +214,7 @@ BinaryNode<Comparable>* BST<Comparable>::find(const Comparable& x, BinaryNode<Co
 {
     if(t == NULL)
         return NULL;
-    else if(x < t->element)
+    else if(static_cast<const error_code>(x) < t->element)
         return find(x, t->left);
     else if(t->element < x)
         return find(x, t->right);

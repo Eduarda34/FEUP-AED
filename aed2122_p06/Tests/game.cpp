@@ -47,4 +47,3 @@ int Game::play() {
 int Game::mostVisited() const {
 	return 0;
 }
-

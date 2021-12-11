@@ -13,6 +13,11 @@ public:
     string getMeaning() const;
     void setMeaning(string m);
     void setWord(string w);
+    friend bool operator==(const WordMean &d1,const WordMean &d2);
+    friend bool operator<(const WordMean &d1,const WordMean &d2);
+    friend bool operator>(const WordMean &d1,const WordMean &d2);
+    void operator=(const WordMean &d1);
+    friend ostream& operator<<(ostream& os, const WordMean& d);
 };
 
 class Dictionary
