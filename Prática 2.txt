@@ -28,5 +28,3 @@ O(n) = n^2
 
  Espacial:
 O(1) 
-
-

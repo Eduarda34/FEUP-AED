@@ -1,0 +1,10 @@
+# ninja log v5
+73	987	6636151604207274	CMakeFiles/aed2122_p10.dir/Tests/funWithGraphs.cpp.obj	ce6d11726e9252b8
+86	1019	6636151604564534	CMakeFiles/aed2122_p10.dir/Tests/graph.cpp.obj	866e4a67699a58b
+1	2331	6636151617658662	CMakeFiles/aed2122_p10.dir/main.cpp.obj	598a3a91d7bd6cdf
+98	2404	6636151618423228	lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	319e58ef8b0a168e
+78	4065	6636151635024899	CMakeFiles/aed2122_p10.dir/Tests/tests.cpp.obj	cac3b04541a17a6f
+92	18971	6636151783785887	lib/googletest-master/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	41fd5efd455fddcf
+18974	27676	6636151871019792	lib/libgtestd.a	250fc7e6ffe6d1b8
+27733	27890	6636151873286936	lib/libgtest_maind.a	5bd5683f07e34d9b
+27891	39520	6636151989512602	../Tests/aed2122_p10.exe	25ecdb1f9cdc22a8
