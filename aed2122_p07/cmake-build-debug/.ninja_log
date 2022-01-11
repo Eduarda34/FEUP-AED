@@ -1,0 +1,9 @@
+# ninja log v5
+18	655	6636180482198150	CMakeFiles/aed2122_p07.dir/Tests/funWithBSTs.cpp.obj	725d009cf7ef0484
+0	1283	6636180488606132	CMakeFiles/aed2122_p07.dir/main.cpp.obj	b2a76ace20a3112e
+24	1342	6636180489196723	lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	51c92a3297993f26
+15	2041	6636180496191049	CMakeFiles/aed2122_p07.dir/Tests/tests.cpp.obj	d7465575edb7bb6a
+21	5726	6636180532940337	lib/googletest-master/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	2813949c969928fa
+5728	8347	6636180559234158	lib/libgtestd.a	250fc7e6ffe6d1b8
+8347	8407	6636180559839825	lib/libgtest_maind.a	5bd5683f07e34d9b
+8407	11917	6636180594872942	../Tests/aed2122_p07.exe	fc1929908aa7da76
